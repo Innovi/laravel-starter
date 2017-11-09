@@ -1,6 +1,7 @@
-<h1 align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg">IMS</h1>
+<h1 align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></h1>
+<h1 align="center">Laravel Starter Kit</h1>
 
-## About Laravel IMS
+## About Laravel Starter Kit
 
 Project Description.
 
@@ -197,6 +198,67 @@ This reverts commit 667ecc1654a317a13331b17617d973392f415f02.
 ```
 
 [Git Commit Message Convention](https://github.com/kazupon/git-commit-message-convention)
+
+## Artisan View
+
+This package adds a handful of view-related commands to Artisan in your Laravel project. Generate blade files that extend other views, scaffold out sections to add to those templates, and more. All from the command line we know and love!
+
+### Installation
+You'll have to follow a couple of simple steps to install this package.
+
+#### Downloading
+Via [composer](http://getcomposer.org):
+
+```bash
+$ composer require sven/artisan-view:1.3.4 --dev
+```
+
+#### Registering the service provider
+Add the `ArtisanViewServiceProvider` to your `providers` array in `config/app.php`:
+
+```php
+// config/app.php
+'providers' => [
+    ...
+    Sven\ArtisanView\ArtisanViewServiceProvider::class,
+];
+```
+
+### Usage Links
+
+- [Usage](https://github.com/svenluijten/artisan-view#usage)
+	- [Creating views](https://github.com/svenluijten/artisan-view#creating-views)
+	- [Extending and sections](https://github.com/svenluijten/artisan-view#extending-and-sections)
+	- [REST resources](https://github.com/svenluijten/artisan-view#rest-resources)
+	- [Scrapping views](https://github.com/svenluijten/artisan-view#scrapping-views)
+	- [Mix and match](https://github.com/svenluijten/artisan-view#mix-and-match)
+
+### Examples
+
+#### Creating views
+```bash
+# Create a view 'index.blade.php' in the default directory
+$ php artisan make:view index
+
+# Create a view 'index.blade.php' in a subdirectory ('pages')
+$ php artisan make:view pages.index
+```
+
+#### Extending and sections
+```bash
+# Extend an existing view
+$ php artisan make:view index --extends=app
+
+# Add a section to the view
+$ php artisan make:view index --section=content
+
+# Add multiple sections to the view
+$ php artisan make:view index --section=title --section=content
+
+# Add an inline section to the view
+# Remember to add quotes around the section if you want to use spaces
+$ php artisan make:view index --section="title:Hello world"
+```
 
 ## About Laravel
 
